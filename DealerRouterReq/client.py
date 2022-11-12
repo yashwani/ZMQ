@@ -20,10 +20,3 @@ if len(sys.argv) > 2:
 for request in range (2):
     print("Sending request ", request, "...")
     socket.send_string(json.dumps({"Hello": "World"}))
-
-req = context.socket(zmq.REQ)
-req.connect("tcp://localhost:%s" % port)
-
-req.send_string(json.dumps({"REQ": "OK"}), flags=zmq.NOBLOCK)
-
-req.send_string(json.dumps({"REQ": "OK"}), flags=zmq.NOBLOCK)
